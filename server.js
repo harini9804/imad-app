@@ -36,7 +36,10 @@ var date= data.date;
 var htmlTemplate=
    `<html>
 <head>
-    <title>${title}</title>
+    <title>
+    ${title}
+    </title>
+    <meta name="viewport" contents="width=device-width, initial-scale=1" />
 <link href="/ui/style.css" rel="stylesheet" />
 </head>
 
@@ -68,13 +71,6 @@ app.get('/:articleName', function (req, res) {
     var articleName=req.params.articleName;
   res.send(createTemplate(articles[articleName]));
 });
-app.get('/article-two', function (req, res) {
-  res.send(createTemplate(articleTwo));
-});
-app.get('/article-three', function (req, res) {
- res.send(createTemplate(articleThree));
-});
-
 
 
 
