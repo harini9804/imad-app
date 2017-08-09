@@ -22,20 +22,24 @@ content:`<p>Here goes my content! Check this page sooHere goes my content! Check
     
 content:`<p>Here goes my content! Check this second article soon! </p>`},
 
-`article-Three`:{title: `Article Three | Harini R`,
+`article-Three`:
+{title: `Article Three | Harini R`,
     date: `August 8, 2017`,
     heading:`Article Three`,
     
     
-content:`<p>Here goes my content! Check this third article soon! </p>`}
+content:`<p>Here goes my content! Check this third article soon! </p>`
+}
+    
 };
+
 function createTemplate(data)
 { var title=data.title;
 var heading = data.heading;
 var content = data.content;
 var date= data.date;
 var htmlTemplate=
-   ` <html>
+   `<html>
 <head>
     <title>${title}</title>
 <link href="/ui/style.css" rel="stylesheet" />
