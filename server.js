@@ -1,5 +1,3 @@
-
-  
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
@@ -74,7 +72,7 @@ app.get('/', function (req, res) {
 
 
 app.get('/:articleName', function (req, res) {
-    var articleName=req.params.articleName;
+    var articleName = req.params.articleName;
   res.send(createTemplate(articles[articleName]));
 });
 
