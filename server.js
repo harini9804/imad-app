@@ -3,33 +3,28 @@ var morgan = require('morgan');
 var path = require('path');
 
 var app = express();
-var articles ={
-    
- `article-One`: {
-    title: `Article One | Harini R`,
+app.use(morgan('combined'));
+
+
+
+var articles = {
+
+'article-One':    {title: `Article One | Harini R`,
     date: `August 6, 2017`,
     heading:`Article One`,
     
     
 content:`<p>Here goes my content! Check this page sooHere goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!n!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!</p>
         <p>Here goes my content! Check this page sooHere goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!n!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!</p>
-        <p>Here goes my content! Check this page sooHere goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!n!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!</p>`
-},
-`article-Two`:{title: `Article Two | Harini R`,
+        <p>Here goes my content! Check this page sooHere goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!n!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!</p>`},   
+'article-Two':{title: `Article Two | Harini R`,
     date: `August 7, 2017`,
     heading:`Article Two`,
-    
-    
-content:`<p>Here goes my content! Check this second article soon! </p>`},
-
-`article-Three`:
-{title: `Article Three | Harini R`,
-    date: `August 8, 2017`,
+    content:`<p>Here goes my content! Check this second article soon! </p>`},
+'article-Three':{title: `Article Three | Harini R`,
+    date: `August 7, 2017`,
     heading:`Article Three`,
-    
-    
-content:`<p>Here goes my content! Check this third article soon! </p>`
-}
+    content:`<p>Here goes my content! Check this third article soon! </p>`}
     
 };
 
@@ -64,9 +59,10 @@ return htmlTemplate;
     
 }
 
-app.use(morgan('combined'));
+
 
 app.get('/:articleName', function (req, res) {
+    var articleName=req.params.articleName;
   res.send(createTemplate(articles[articleName]));
 });
 app.get('/article-two', function (req, res) {
