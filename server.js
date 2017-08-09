@@ -8,7 +8,6 @@ app.use(morgan('combined'));
 
 
 var articles = {
-
 'article-One':{
     title: `Article One | Harini R`,
     date: `August 6, 2017`,
