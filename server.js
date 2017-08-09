@@ -9,7 +9,8 @@ app.use(morgan('combined'));
 
 var articles = {
 
-'article-One':{title: 'Article One | Harini R',
+'article-One':{
+    title: 'Article One | Harini R',
     date: `August 6, 2017`,
     heading:`Article One`,
     
@@ -17,11 +18,13 @@ var articles = {
 content:`<p>Here goes my content! Check this page sooHere goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!n!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!</p>
         <p>Here goes my content! Check this page sooHere goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!n!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!</p>
         <p>Here goes my content! Check this page sooHere goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!n!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!Here goes my content! Check this page soon!</p>`},   
-'article-Two':{title: `Article Two | Harini R`,
+'article-Two':{
+    title: `Article Two | Harini R`,
     date: `August 7, 2017`,
     heading:`Article Two`,
     content:`<p>Here goes my content! Check this second article soon! </p>`},
-'article-Three':{title: `Article Three | Harini R`,
+'article-Three':{
+    title: `Article Three | Harini R`,
     date: `August 7, 2017`,
     heading:`Article Three`,
     content:`<p>Here goes my content! Check this third article soon! </p>`}
