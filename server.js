@@ -32,7 +32,7 @@ content:`<p>Here goes my content! Check this page sooHere goes my content! Check
 };
 
 function createTemplate(data)
-{   var title = data.title;
+{   //var title = data.title;
 var heading = data.heading;
 var content = data.content;
 var date= data.date;
