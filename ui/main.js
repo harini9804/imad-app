@@ -7,5 +7,5 @@ element.innerHTML='new value';
 
 var img= document.getElementById('madi');
 img.onclick = function () {
-    img.style.margin-left = '300px';
+    img.style.marginLeft = '300px';
 };
