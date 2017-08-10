@@ -14,15 +14,15 @@ button.onclick = function() {
     //ACTION
             if (request.status ===200){
                 var counter = request.responseText; 
-                var span = document.getElementById('counter');
+                var span = document.getElementById('count');
             span.innerHTML = counter.toString();
             }
          }
          //make request
         
     };
-    //render variable in correct span
-     request.open('GET','http://harini9804.imad.hasura-app.io/counter',true);
+    //make request
+    request.open('GET','http://harini9804.imad.hasura-app.io/counter',true);
          request.send(null);
     
     
