@@ -4,6 +4,8 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+
 
 var config = {
     user: 'harini9804',
@@ -11,10 +13,13 @@ var config = {
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password:process.env.DB_PASSWORD
-}
+};
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+        cookie: {maxAge: 1000 * 60 * 60 * 24 * 30}
+}));
 
 
 
@@ -107,6 +112,8 @@ app.post('/login', function(req,res){
         if(hashedPassword === dbString )
         {
       res.send('credentials correct');
+      //set a session
+      
       }
       else
       res.status(403).send('username/password is invalid');
