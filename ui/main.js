@@ -9,12 +9,12 @@ submit.onclick = function() {
  request.onreadstatechange = function() {
      if(request.readyState  === XMLHttpRequest.DONE) {
          if(request.status === 200) {
-             console.log('user logged in');
+             
              alert('logged in succeddfully');
              
-         }else if (request.status===403){
+         }else if (request.status === 403){
          alert('username/password is invalid');}
-         else if (request.status===500) {
+         else if (request.status === 500) {
              alert('Something went wrong in the server');
          }
          
