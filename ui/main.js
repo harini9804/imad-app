@@ -23,6 +23,11 @@ ul.innerHTML=list;
   //make req to server and send name
   //capture list of names and render it
  
+ 
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
+    request.open('POST', 'http://harini9804.imad.hasura-app.io/submit-name?='+name,true);
+    request.send(null);
   
     
 
