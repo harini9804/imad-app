@@ -14,7 +14,7 @@ var config = {
 }
 var app = express();
 app.use(morgan('combined'));
-app.use(express.bodyParser.json());
+app.use(bodyParser.json());
 
 
 
