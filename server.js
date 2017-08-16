@@ -18,6 +18,7 @@ var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(session({
+    secret: 'SomeRandomSecretValue',
         cookie: {maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
@@ -111,9 +112,15 @@ app.post('/login', function(req,res){
         var hashedPassword = hash(password,salt);
         if(hashedPassword === dbString )
         {
+            
+            //set session
+            req.session.auth = {userId: result.rows[0].id};
+            
       res.send('credentials correct');
-      //set a session
       
+      
+      
+     
       }
       else
       res.status(403).send('username/password is invalid');
@@ -122,6 +129,12 @@ app.post('/login', function(req,res){
    });
    
     
+});
+
+
+app.get('/check-login', function(req,res){
+   if(req.session && req.session.auth && req.session.auth.userId)
+   res.send('You are logged in: '+ req.session.auth.userId.toString());
 });
 
 var pool = new Pool(config);
