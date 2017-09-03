@@ -118,7 +118,7 @@ app.post('/login', function(req,res){
             req.session.auth = {userId: result.rows[0].id};
             
       res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.parse('{"message":"Credential Correct"}'));
+    res.send(JSON.parse('{"message":"You have successfully signed in!"}'));
       
       
       
