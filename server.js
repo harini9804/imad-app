@@ -86,8 +86,9 @@ app.post('/create-user',function(req,res){
        if(err){
           res.status(500).send(err.toString());
           
-      }else
-      res.send('User successfully created '+username);
+      }else{
+      res.setHeader('Content-Type', 'application/json');
+res.send(JSON.parse('{"message":"User created!"}'));}
        
    });
 });
@@ -116,7 +117,8 @@ app.post('/login', function(req,res){
             //set session
             req.session.auth = {userId: result.rows[0].id};
             
-      res.status(200).send('credentials correct');
+      res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.parse('{"message":"Credential Correct"}'));
       
       
       
